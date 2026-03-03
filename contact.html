@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Thab Edits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+        
+        /* Copy header styles from index.html */
+        
+        .contact-page {
+            padding: 120px 5% 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .contact-header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-header h1 span {
+            color: #ffd700;
+        }
+        
+        .contact-header p {
+            color: #999;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-card {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255,215,0,0.1);
+        }
+        
+        .contact-card h2 {
+            color: #ffd700;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            background: rgba(255,215,0,0.05);
+            transform: translateX(10px);
+        }
+        
+        .method-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,215,0,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .method-icon i {
+            font-size: 2rem;
+            color: #ffd700;
+        }
+        
+        .method-text h3 {
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .method-text p {
+            color: #999;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-item {
+            background: rgba(255,215,0,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-item:hover {
+            background: #ffd700;
+            transform: translateY(-5px);
+        }
+        
+        .social-item:hover i,
+        .social-item:hover span {
+            color: #0a0a0a;
+        }
+        
+        .social-item i {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        
+        .social-item span {
+            display: block;
+            color: #ffd700;
+            font-weight: 600;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #1a1a1a;
+            border-radius: 30px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(255,215,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">THAB EDITS</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#" class="btn-contact" onclick="openProjectModal(event)">Start Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="contact-page">
+        <div class="contact-header">
+            <h1>Let's <span>Create</span> Together</h1>
+            <p>Have a project in mind? I'd love to hear about it. Let's make something amazing!</p>
+        </div>
+        
+        <div class="contact-grid">
+            <!-- Contact Info Card -->
+            <div class="contact-card">
+                <h2><i class="fas fa-paper-plane"></i> Contact Info</h2>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="method-text">
+                        <h3>Email</h3>
+                        <p>thab.edits@gmail.com</p>
+                        <p style="font-size: 0.8rem; color: #666;">Response within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="method-text">
+                        <h3>Telegram</h3>
+                        <p>@thab_edits</p>
+                        <p style="font-size: 0.8rem; color: #666;">Fastest response</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="method-text">
+                        <h3>Instagram</h3>
+                        <p>@thab.edits</p>
+                        <p style="font-size: 0.8rem; color: #666;">DM for quick questions</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="method-text">
+                        <h3>Phone</h3>
+                        <p>+251 --- --- ---</p>
+                        <p style="font-size: 0.8rem; color: #666;">Available 9AM - 6PM</p>
+                    </div>
+                </div>
+                
+                <div class="social-grid">
+                    <a href="#" class="social-item">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-item">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Quick Contact Form -->
+            <div class="contact-card">
+                <h2><i class="fas fa-rocket"></i> Quick Message</h2>
+                
+                <form onsubmit="event.preventDefault(); alert('Message sent! Thab will contact you soon.');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">I'm interested in...</option>
+                            <option value="music">Music Video</option>
+                            <option value="commercial">Commercial / Brand Video</option>
+                            <option value="social">Social Media Content</option>
+                            <option value="vfx">Visual Effects (VFX)</option>
+                            <option value="other">Other Project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell me about your vision..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Map Placeholder -->
+        <div class="map-placeholder">
+            <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #ffd700; margin-right: 10px;"></i>
+            <span style="color: #666;">Based in Addis Ababa, Ethiopia 🇪🇹</span>
+        </div>
+    </section>
+    
+    <!-- Add the modal and footer from index.html -->
+    
+    <script>
+        function openProjectModal(event) {
+            event.preventDefault();
+            // Add modal functionality
+        }
+    </script>
+</body>
+</html>
