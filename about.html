@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Thab Edits | Video Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+        
+        header {
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,215,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 5%;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .nav-links a.active {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+        }
+        
+        .btn-contact {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #0a0a0a !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+        
+        .about {
+            padding: 120px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .about-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-header h1 span {
+            color: #ffd700;
+        }
+        
+        .about-header p {
+            color: #999;
+            font-size: 1.1rem;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .about-text {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255,215,0,0.1);
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .about-text p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .about-text .highlight {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        
+        .skills-section {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255,215,0,0.1);
+        }
+        
+        .skills-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+        
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+        
+        .other-skills {
+            margin-top: 40px;
+        }
+        
+        .other-skills h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
+            color: #ffd700;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background: #ffd700;
+            color: #0a0a0a;
+            transform: translateY(-3px);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,215,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: #ffd700;
+            transform: translateY(-5px);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">THAB EDITS</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="about">
+        <div class="about-header">
+            <h1>About <span>Thab Edits</span></h1>
+            <p>The creative mind behind the edits</p>
+        </div>
+        
+        <div class="about-content">
+            <!-- About Text - EXACTLY AS YOU PROVIDED! -->
+            <div class="about-text">
+                <h2>Hey there, I'm Thab</h2>
+                <p>a video editor with a true passion for storytelling and a deep expertise in <span class="highlight">Adobe Premiere Pro and After Effects</span>. With years of experience in the industry, I've mastered the art of turning raw footage into polished, engaging, and visually captivating content. I'm not just a video editor—I'm a creator who's obsessed with delivering perfection.</p>
+                
+                <p>From smooth transitions to mind-blowing visual effects, I specialize in crafting cinematic experiences that leave a lasting impression. Whether you're looking to create an unforgettable brand video, a viral social media clip, or a heart-pounding music video, I bring a unique approach to each project, ensuring it stands out from the crowd.</p>
+                
+                <p><span class="highlight">I take pride in my work</span>, and every project gets my full dedication and creativity. Let's create something amazing together!</p>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h2>Core Expertise</h2>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Adobe Premiere Pro</span>
+                        <span>98%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 98%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>After Effects</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Color Grading</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span>Motion Graphics</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <!-- Other Skills Section - EXACTLY AS REQUESTED -->
+                <div class="other-skills">
+                    <h3>Other Skills & Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-paint-brush"></i> Graphics Design</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> Web Developer</span>
+                        <span class="skill-tag"><i class="fas fa-video"></i> Video Editor</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Business Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-video"></i>
+                <h3>100+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3>5+ Years</h3>
+                <p>Experience</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-smile"></i>
+                <h3>50+</h3>
+                <p>Happy Clients</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer style="background: #0a0a0a; padding: 2rem 5%; text-align: center; border-top: 1px solid #1a1a1a; margin-top: 60px;">
+        <p style="color: #666;">© 2026 Thab Edits. All rights reserved.</p>
+    </footer>
+</body>
+</html>
