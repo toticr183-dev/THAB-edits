@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thab Edits - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+        
+        header {
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,215,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 5%;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .nav-links a.active {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+        }
+        
+        .btn-contact {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #0a0a0a !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+        
+        .portfolio {
+            padding: 120px 5% 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .portfolio-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-header h1 span {
+            color: #ffd700;
+        }
+        
+        .portfolio-header p {
+            color: #999;
+            font-size: 1.1rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,215,0,0.1);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #ffd700;
+            color: #0a0a0a;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.3));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .portfolio-overlay p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-tags span {
+            background: rgba(255,215,0,0.2);
+            color: #ffd700;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">THAB EDITS</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html" class="active">Work</a></li>
+                <li><a href="contact.html" class="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="portfolio">
+        <div class="portfolio-header">
+            <h1>My <span>Work</span></h1>
+            <p>A showcase of my best video editing projects</p>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Music Videos</button>
+            <button class="filter-btn">Commercials</button>
+            <button class="filter-btn">Social Media</button>
+            <button class="filter-btn">VFX</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1536240474400-95bda6b9f8f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 1">
+                <div class="portfolio-overlay">
+                    <h3>Dream Chaser</h3>
+                    <p>Music Video</p>
+                    <div class="portfolio-tags">
+                        <span>After Effects</span>
+                        <span>Premiere Pro</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1574717024453-354056afaffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 2">
+                <div class="portfolio-overlay">
+                    <h3>Brand X Commercial</h3>
+                    <p>Advertisement</p>
+                    <div class="portfolio-tags">
+                        <span>Color Grading</span>
+                        <span>VFX</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 3">
+                <div class="portfolio-overlay">
+                    <h3>Viral Reel Pack</h3>
+                    <p>Social Media</p>
+                    <div class="portfolio-tags">
+                        <span>Motion Graphics</span>
+                        <span>Editing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 4 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1536240474400-95bda6b9f8f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 4">
+                <div class="portfolio-overlay">
+                    <h3>Epic VFX Showreel</h3>
+                    <p>Visual Effects</p>
+                    <div class="portfolio-tags">
+                        <span>After Effects</span>
+                        <span>3D</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 5 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1574717024453-354056afaffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 5">
+                <div class="portfolio-overlay">
+                    <h3>Wedding Film</h3>
+                    <p>Cinematic</p>
+                    <div class="portfolio-tags">
+                        <span>Color Grading</span>
+                        <span>Editing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 6 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 6">
+                <div class="portfolio-overlay">
+                    <h3>Product Launch</h3>
+                    <p>Commercial</p>
+                    <div class="portfolio-tags">
+                        <span>Motion Graphics</span>
+                        <span>VFX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer style="background: #0a0a0a; padding: 2rem 5%; text-align: center; border-top: 1px solid #1a1a1a; margin-top: 60px;">
+        <p style="color: #666;">© 2026 Thab Edits. All rights reserved.</p>
+    </footer>
+</body>
+</html>
