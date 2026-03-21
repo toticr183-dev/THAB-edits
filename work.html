@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thab Edits - Portfolio</title>
+    <title>Thab Edits - Portfolio Work</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -13,12 +13,12 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         body {
             background: #0a0a0a;
             color: white;
         }
-        
+
         header {
             background: rgba(10,10,10,0.95);
             backdrop-filter: blur(10px);
@@ -28,7 +28,7 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -37,7 +37,7 @@
             margin: 0 auto;
             padding: 1rem 5%;
         }
-        
+
         .logo {
             font-size: 2rem;
             font-weight: 800;
@@ -45,28 +45,28 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
         }
-        
+
         .nav-links a:hover {
             color: #ffd700;
         }
-        
+
         .nav-links a.active {
             color: #ffd700;
             border-bottom: 2px solid #ffd700;
         }
-        
+
         .btn-contact {
             background: linear-gradient(135deg, #ffd700, #ffaa00);
             color: #0a0a0a !important;
@@ -74,130 +74,142 @@
             border-radius: 50px;
             font-weight: 700;
         }
-        
+
+        /* ===== PORTFOLIO STYLES ===== */
         .portfolio {
             padding: 120px 5% 60px;
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .portfolio-header {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .portfolio-header h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
         }
-        
+
         .portfolio-header h1 span {
             color: #ffd700;
         }
-        
+
         .portfolio-header p {
             color: #999;
             font-size: 1.1rem;
         }
-        
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+
+        /* Featured Work Grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
         }
-        
-        .filter-btn {
+
+        .work-card {
             background: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
+            border-radius: 20px;
+            overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid rgba(255,215,0,0.1);
         }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #ffd700;
-            color: #0a0a0a;
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffd700;
+            box-shadow: 0 20px 30px rgba(255,215,0,0.1);
         }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        
-        .portfolio-item {
+
+        /* Video Container (for YouTube) */
+        .video-container {
             position: relative;
-            border-radius: 15px;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
             overflow: hidden;
-            aspect-ratio: 16/9;
-            cursor: pointer;
+            background: #000;
         }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay {
+
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.3));
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* TikTok Card Style (since embed is tricky, we use a card with link) */
+        .tiktok-card {
+            background: linear-gradient(135deg, #010101, #1a1a1a);
+            padding: 40px;
+            text-align: center;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
+
+        .tiktok-card i {
+            font-size: 4rem;
+            color: #ff0050;
         }
-        
-        .portfolio-overlay h3 {
-            color: #ffd700;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .portfolio-overlay p {
-            color: #fff;
+
+        .tiktok-card h3 {
+            font-size: 1.8rem;
             margin-bottom: 10px;
         }
-        
-        .portfolio-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .portfolio-tags span {
-            background: rgba(255,215,0,0.2);
-            color: #ffd700;
-            padding: 5px 12px;
+
+        .tiktok-btn {
+            background: #ff0050;
+            color: white;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(255,215,0,0.3);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
         }
-        
+
+        .tiktok-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255,0,80,0.3);
+        }
+
+        .work-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .work-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .work-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0a0a0a;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 60px;
+        }
+
         @media (max-width: 768px) {
-            .portfolio-grid {
+            .portfolio-header h1 {
+                font-size: 2.5rem;
+            }
+            .work-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -215,109 +227,65 @@
             </ul>
         </nav>
     </header>
-    
+
     <section class="portfolio">
         <div class="portfolio-header">
-            <h1>My <span>Work</span></h1>
-            <p>A showcase of my best video editing projects</p>
+            <h1>Featured <span>Work</span></h1>
+            <p>Explore my latest video projects and collaborations</p>
         </div>
-        
-        <div class="filter-buttons">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Music Videos</button>
-            <button class="filter-btn">Commercials</button>
-            <button class="filter-btn">Social Media</button>
-            <button class="filter-btn">VFX</button>
-        </div>
-        
-        <div class="portfolio-grid">
-            <!-- Portfolio Item 1 -->
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1536240474400-95bda6b9f8f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 1">
-                <div class="portfolio-overlay">
-                    <h3>Dream Chaser</h3>
-                    <p>Music Video</p>
-                    <div class="portfolio-tags">
-                        <span>After Effects</span>
-                        <span>Premiere Pro</span>
-                    </div>
+
+        <div class="work-grid">
+            <!-- Work Item 1: YouTube Video 1 -->
+            <div class="work-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/sSqEoYyZelo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Business Growth Strategy</h3>
+                    <p>Creative editing for motivational content</p>
                 </div>
             </div>
-            
-            <!-- Portfolio Item 2 -->
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1574717024453-354056afaffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 2">
-                <div class="portfolio-overlay">
-                    <h3>Brand X Commercial</h3>
-                    <p>Advertisement</p>
-                    <div class="portfolio-tags">
-                        <span>Color Grading</span>
-                        <span>VFX</span>
-                    </div>
+
+            <!-- Work Item 2: TikTok Video -->
+            <div class="work-card">
+                <div class="tiktok-card">
+                    <i class="fab fa-tiktok"></i>
+                    <h3>Watch on TikTok</h3>
+                    <p>Short-form content that engages and inspires</p>
+                    <a href="https://vt.tiktok.com/ZSmU2xpfs/" target="_blank" rel="noopener noreferrer" class="tiktok-btn">
+                        <i class="fab fa-tiktok"></i> Open in TikTok
+                    </a>
+                </div>
+                <div class="work-info">
+                    <h3>Viral Clip</h3>
+                    <p>Fast-paced editing for social media</p>
                 </div>
             </div>
-            
-            <!-- Portfolio Item 3 -->
-            <div class="portfolio-item">
-               <iframe>
-                   <video src="https://youtu.be/sSqEoYyZelo?si=PMXFeloSfG4tnEBW"></video>
-               </iframe>
-                <div class="portfolio-overlay">
-                    <h3>Viral Reel Pack</h3>
-                    <p>Social Media</p>
-                    <div class="portfolio-tags">
-                        <span>Motion Graphics</span>
-                        <span>Editing</span>
-                    </div>
+
+            <!-- Work Item 3: YouTube Video 2 -->
+            <div class="work-card">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/fI5t2jCzD9Y" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
-            </div>
-            
-            <!-- Portfolio Item 4 -->
-            <div class="portfolio-item">
-                <iframe>
-                   <video src="https://vt.tiktok.com/ZSmU2xpfs/"></video>
-               </iframe>
-                <div class="portfolio-overlay">
-                    <h3>Epic VFX Showreel</h3>
-                    <p>Visual Effects</p>
-                    <div class="portfolio-tags">
-                        <span>After Effects</span>
-                        <span>3D</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Portfolio Item 5 -->
-            <div class="portfolio-item">
-                 <iframe>
-                   <video src="https://youtu.be/fI5t2jCzD9Y?si=hylhNjXGtveuIYF6"></video>
-               </iframe>
-                <div class="portfolio-overlay">
-                    <h3>Wedding Film</h3>
-                    <p>Cinematic</p>
-                    <div class="portfolio-tags">
-                        <span>Color Grading</span>
-                        <span>Editing</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Portfolio Item 6 -->
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 6">
-                <div class="portfolio-overlay">
-                    <h3>Product Launch</h3>
-                    <p>Commercial</p>
-                    <div class="portfolio-tags">
-                        <span>Motion Graphics</span>
-                        <span>VFX</span>
-                    </div>
+                <div class="work-info">
+                    <h3>In-Depth Discussion</h3>
+                    <p>Seamless editing and engaging storytelling</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <footer style="background: #0a0a0a; padding: 2rem 5%; text-align: center; border-top: 1px solid #1a1a1a; margin-top: 60px;">
+
+    <footer>
         <p style="color: #666;">© 2026 Thab Edits. All rights reserved.</p>
     </footer>
 </body>
